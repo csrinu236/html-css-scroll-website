@@ -17,10 +17,9 @@ navBtn.addEventListener("click", function () {
   }
 });
 
-let navbarHeight;
+let navbarHeight = navbar.getBoundingClientRect().height;
 window.addEventListener("scroll", function () {
   const height = window.pageYOffset;
-  navbarHeight = navbar.getBoundingClientRect().height;
   if (height > navbarHeight) {
     navbar.classList.add("white-navbar");
   } else {
@@ -42,10 +41,12 @@ scrollLinks.forEach((link) => {
     const id = link.getAttribute("href").slice(1);
     const element = document.getElementById(id);
     let position = element.offsetTop;
+    console.log(position);
     window.scrollTo({
       top: position - navbarHeight,
       left: 0,
     });
+    console.log(position - navbarHeight);
     linksContainer.style.height = 0;
   });
 });
