@@ -4,7 +4,7 @@ const linksContainer = document.querySelector(".links-container");
 const links = document.querySelector(".links");
 const navBtn = document.querySelector(".nav-btn");
 const topBtn = document.querySelector(".top-btn");
-const scrollLinks = document.querySelectorAll(".links a");
+const scrollLinks = document.querySelectorAll(".scroll-link");
 date.textContent = new Date().getFullYear();
 
 navBtn.addEventListener("click", function () {
@@ -39,7 +39,8 @@ console.log(scrollLinks);
 scrollLinks.forEach((link) => {
   link.addEventListener("click", function (e) {
     e.preventDefault();
-    const id = link.textContent;
+    const id = link.getAttribute("href").slice(1);
+    console.log(id);
     const element = document.getElementById(id);
     let position = element.offsetTop;
     window.scrollTo({
