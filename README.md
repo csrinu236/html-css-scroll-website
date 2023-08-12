@@ -1,4 +1,4 @@
-# html-css-scroll-project
+# simple-html-css-scroll-website
 
 This website explains how scrolling can controllable using Window.scrollTO method of javascript,
 without getting interuppted by other floating stuff of the webpage in different screen sizes.
